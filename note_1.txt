@@ -1,0 +1,4 @@
+Cypress limitations :
+can't switch between browser windows
+limited iframe support
+parallel execution in cypress cloud
