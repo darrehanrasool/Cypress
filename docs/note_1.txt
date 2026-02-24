@@ -1,4 +1,4 @@
-Cypress is Javascript 2E2 web UI automation.
+Cypress is a Javascript E2E web UI automation.
 Cypress runs directly inside the web browser.
 Cypress limitations :
 Can't switch between browser windows.
