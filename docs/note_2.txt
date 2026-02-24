@@ -1,1 +1,9 @@
-Running Cypress : npx cypress open
+running cypress           : npx cypress open.
+running test              : npx cypress run.
+running sepacific test    : npx cypress run --spec "relative path"
+running sepacific test    : npx cypress run --spec "relative path" --headed
+running sepacific test    : npx cypress run --spec "relative path" --headed --browser chrome
+initialising node project : npm init.
+pakage.json               : project    dependencies.
+pakage-lock-json          : compatable dependencies.
+Specs                     : testing files
