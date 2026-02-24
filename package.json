@@ -1,0 +1,29 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "learning cypress",
+  "keywords": [
+    "cypress"
+  ],
+  "homepage": "https://github.com/darrehanrasool/Cypress#readme",
+  "bugs": {
+    "url": "https://github.com/darrehanrasool/Cypress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrehanrasool/Cypress.git"
+  },
+  "license": "MIT",
+  "author": "darrehanrasool <darrehanrasool@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "devDependencies": {
+    "cypress": "^15.10.0"
+  }
+}
