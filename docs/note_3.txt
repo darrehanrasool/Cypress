@@ -1,2 +1,0 @@
-what are locators ?
-via locators we can target DOM elements eg id="email".
