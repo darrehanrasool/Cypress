@@ -16,7 +16,7 @@ describe("first group 1", () => {
     cy.contains("nb-card", "Using the Grid", { matchCase: false })
       .find("nb-radio-group")
       .contains("Option 1");
-    // via space its looking for decendent tag
+    // via space it's looking for decendent tag
     cy.get("nb-card nb-radio-group").contains("Option 1");
     // via direct child only
     cy.get("nb-card > nb-card-body [placeholder='Jane Doe']");

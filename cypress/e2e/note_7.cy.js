@@ -10,10 +10,10 @@ describe("group 1", () => {
     // this will not work not a good practice to asign variable in cypress
     const email1 = cy.get("#inputEmail1");
     email1.parents("form").find("button").click();
-    // (1) Alias ie second name:
+    // (1) via using Alias:
     cy.get("#inputEmail1").as("darrehanrasool");
     cy.get("@darrehanrasool").parents("form").find("button").click();
-    // (2) via using then() method:
+    // (2) via using then():
     cy.get("#inputEmail1").then((rehan) => {
       cy.wrap(rehan.parents("form").find("button").click());
       // we can reuse it again
@@ -25,8 +25,9 @@ describe("group 1", () => {
           return dar;
         });
       // second way to return values via aliasing
-      cy.get(rehan).as("variable");
+      // these variable are globally avalaible
+      cy.get(rehan).as("variable_1");
     });
-    cy.get("@variable").click();
+    cy.get("@variable_1").click();
   });
 });
