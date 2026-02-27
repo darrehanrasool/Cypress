@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-// it("name",()=>{})       first argument as name second argument as callback.
-// describe("name",()=>{}) first argument as name second argument as callback.
+// it("name",()=>{})       first argument as name, second argument as callback.
+// describe("name",()=>{}) first argument as name, second argument as callback.
 // test hooks in cypress
 beforeEach("open web application", () => {
   cy.visit("/");

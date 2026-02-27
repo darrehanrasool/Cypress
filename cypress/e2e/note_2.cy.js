@@ -2,7 +2,6 @@
 // test hooks in cypress
 beforeEach("open web application", () => {
   cy.visit("/");
-  //searching element via text and performing click()
   cy.contains("Forms").click();
   cy.contains("Form Layouts").click();
 });

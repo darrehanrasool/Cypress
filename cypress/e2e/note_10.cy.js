@@ -8,6 +8,7 @@ beforeEach("open web application", () => {
 describe("Time outs", () => {
   it.only("first test 1", () => {
     cy.contains("Open with delay 10 seconds", { matchCase: false }).click();
+    //cypress method default timeout is 4 sec
     cy.get("nb-dialog-container nb-card nb-card-header", {
       timeout: 11000,
     }).should("have.text", "Friendly reminder");
