@@ -13,4 +13,5 @@ export default defineConfig({
   // global configuration goes here :
   viewportWidth: 1280,
   viewportHeight: 720,
+  // defaultCommandTimeout: 11000,
 });
