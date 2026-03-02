@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   // global configuration goes here :
-  // -defaultCommandTimeout: 11000,
+  defaultCommandTimeout: 5000,
   viewportWidth: 1280,
   viewportHeight: 720,
 });
