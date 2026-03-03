@@ -5,7 +5,7 @@ beforeEach("open web application", () => {
   cy.contains("Modal & Overlays").click();
   cy.contains("Dialog").click();
 });
-describe("Time outs", () => {
+describe("Time outs Example", () => {
   it.only("first test 1", () => {
     cy.contains("Open with delay 10 seconds", { matchCase: false }).click();
     //cypress method default timeout is 4 sec

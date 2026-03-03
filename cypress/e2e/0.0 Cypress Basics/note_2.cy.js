@@ -5,7 +5,7 @@ beforeEach("open web application", () => {
   cy.contains("Forms").click();
   cy.contains("Form Layouts").click();
 });
-it("first test ", () => {
+it.only("first test ", () => {
   //   via tag
   cy.get(`input`);
   //   via class

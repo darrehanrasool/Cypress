@@ -24,8 +24,8 @@ describe("group 1", () => {
         .then((dar) => {
           return dar;
         });
-      // second way to return values via aliasing
-      // these variable are globally avalaible
+      // second way to return values via aliasing.
+      // these variable are globally avalaible.
       cy.get(rehan).as("variable_1");
     });
     cy.get("@variable_1").click();

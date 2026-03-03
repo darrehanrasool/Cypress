@@ -8,23 +8,23 @@ beforeEach("open web application", () => {
 
 describe("Assertion Ways and Retry", () => {
   it.only("first test 1", () => {
-    // partial assertion
+    // partial assertion eg
     cy.get('[for="exampleInputEmail1"]').should("contain", "Email address");
-    // exact  assertion
+    // exact  assertion  eg
     cy.get('[for="exampleInputEmail1"]').should("have.text", "Email address");
-    // assertion
+    // assertion eg 1
     cy.get('[for="exampleInputEmail1"]')
       .invoke("text")
       .then((value) => {
         expect(value).to.equal("Email address");
       });
-    // assertion
+    // assertion eg 2
     cy.get('[for="exampleInputEmail1"]')
       .invoke("text")
       .then((value) => {
         expect(value).to.contain("Email address");
       });
-    //assertion
+    //assertion eg 3
     cy.get('[for="exampleInputEmail1"]').then((value) => {
       expect(value).to.have.text("Email address");
     });

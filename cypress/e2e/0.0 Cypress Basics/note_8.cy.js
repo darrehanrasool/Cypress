@@ -5,10 +5,10 @@ beforeEach("open web applications ", () => {
   cy.contains("Forms").click();
   cy.contains("Form Layout").click();
 });
+// via using JQuery method() and via using Invoke method()
+// Invoke method() allows us to use  JQuery  methods()
 describe("Extracting Values From DOM ", () => {
   it.only("first test 1", () => {
-    // via using JQuery method() and via using Invoke method()
-    // Invoke method() allows us to use  JQuery  methods()
     // eg 1
     cy.get('[for="exampleInputEmail1"]').then((label) => {
       const data = label.text();
@@ -37,7 +37,7 @@ describe("Extracting Values From DOM ", () => {
       "input-full-width size-medium status-basic shape-rectangle nb-transition",
     );
     // eg 5
-    cy.get('[id="exampleInputEmail1"]').type("darrehanrasool@gmail.com");
+    cy.get('[id="exampleInputEmail1"]').type("darrehanrasool");
     cy.get('[id="exampleInputEmail1"]')
       .invoke("prop", "value")
       .then((emailvalue) => {
