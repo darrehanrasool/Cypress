@@ -1,4 +1,3 @@
 clear() it will not work for labels.
 check() it will not work for labels.
-for using enter key
 cy.get("#input-password").type("khuftanfaqeer{enter}");
