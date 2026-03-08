@@ -43,5 +43,12 @@ describe("Extracting Values From DOM ", () => {
       .then((emailvalue) => {
         console.log(emailvalue);
       });
+    // assertion
+    cy.get('[id="exampleInputEmail1"]').type("darrehanrasool");
+    cy.get('[id="exampleInputEmail1"]').should(
+      "have.prop",
+      "value",
+      "darrehanrasool",
+    );
   });
 });

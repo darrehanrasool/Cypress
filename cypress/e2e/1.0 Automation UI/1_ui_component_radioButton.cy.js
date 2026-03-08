@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 beforeEach("open web application", () => {
   cy.visit("/");
+  cy.contains("Forms").click();
+  cy.contains("Form Layout").click();
 });
 describe("ui component Automation", () => {
-  it.only("input feilds", () => {
-    cy.contains("Forms").click();
-    cy.contains("Form Layout").click();
+  it.only("radio buttons", () => {
     cy.contains("nb-card", "Using the Grid")
       .find('[type="radio"')
       .then((allRadioButtons) => {

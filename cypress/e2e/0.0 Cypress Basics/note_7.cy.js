@@ -14,11 +14,12 @@ describe("group 1", () => {
     cy.get("#inputEmail1").as("darrehanrasool");
     cy.get("@darrehanrasool").parents("form").find("button").click();
     // (2) via using then():
+    // then() will return instance of the dom it will be JQuery object
     cy.get("#inputEmail1").then((rehan) => {
       cy.wrap(rehan.parents("form").find("button").click());
       // we can reuse it again
       cy.wrap(rehan.parents("form").find("button").click());
-      //we can wrap any object in order to call cypress methods
+      // we can wrap any objects in order to call cypress methods
       cy.wrap("hello")
         .should("equal", "hello")
         .then((dar) => {

@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 beforeEach("open web application", () => {
   cy.visit("/");
+  cy.contains("Forms").click();
+  cy.contains("Form Layout").click();
 });
 describe("ui component Automation", () => {
   it.only("input feilds", () => {
-    cy.contains("Forms").click();
-    cy.contains("Form Layout").click();
     // Example
     cy.get("#inputEmail1")
       .type("darrehanrasool_first", { delay: 200 })
@@ -23,13 +23,13 @@ describe("ui component Automation", () => {
     cy.get("#inputEmail1")
       .should("have.value", `${data}works`)
       .clear()
-      .type("positive passed sucessfully !")
+      .type("assertion passed sucessfully !")
       .press(Cypress.Keyboard.Keys.TAB);
     // Negative Assertion
     cy.get("#inputEmail1")
       .should("not.have.value", ``)
       .clear()
-      .type("negative passed sucessfully !");
+      .type("assertion passed sucessfully !");
     cy.contains("Auth").click();
     cy.contains("Login").click();
     cy.get("#input-email").type("hola@gmail.com");
