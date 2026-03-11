@@ -1,3 +1,4 @@
 clear() it will not work for labels.
 check() it will not work for labels.
+chlick() it willnow work for labels.
 cy.get("#input-password").type("khuftanfaqeer{enter}");

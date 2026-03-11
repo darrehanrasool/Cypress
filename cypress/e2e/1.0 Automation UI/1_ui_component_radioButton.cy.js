@@ -7,7 +7,7 @@ beforeEach("open web application", () => {
 describe("ui component Automation", () => {
   it.only("radio buttons", () => {
     cy.contains("nb-card", "Using the Grid")
-      .find('[type="radio"')
+      .find('[type="radio"]')
       .then((allRadioButtons) => {
         // Example Number 1
         cy.wrap(allRadioButtons.eq(0))
