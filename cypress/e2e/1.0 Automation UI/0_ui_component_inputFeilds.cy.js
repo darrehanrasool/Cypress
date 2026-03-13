@@ -24,13 +24,13 @@ describe("ui component Automation", () => {
     cy.get("#inputEmail1")
       .should("have.value", `${data}works`)
       .clear()
-      .type("assertion passed sucessfully !")
+      .type("positive assertion passed sucessfully !")
       .press(Cypress.Keyboard.Keys.TAB);
     // Negative Assertion
     cy.get("#inputEmail1")
       .should("not.have.value", ``)
       .clear()
-      .type("assertion passed sucessfully !");
+      .type("negative assertion passed sucessfully !");
     cy.contains("Auth").click();
     cy.contains("Login").click();
     cy.get("#input-email").type("hola@gmail.com");
