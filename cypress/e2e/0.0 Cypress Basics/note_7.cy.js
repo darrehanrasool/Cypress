@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-//test hooks in cypress
+// test hooks in cypress
+// then() will return instance of the dom it will be JQuery object
 beforeEach("open web applications", () => {
   cy.visit("/");
   cy.contains("Forms").click();
@@ -7,17 +8,15 @@ beforeEach("open web applications", () => {
 });
 describe("group 1", () => {
   it.only("Reusing Locators in Cypress: ", () => {
-    // this will not work not a good practice to asign variable in cypress
+    // (0) via using variable:
     const email1 = cy.get("#inputEmail1");
     email1.parents("form").find("button").click();
     // (1) via using Alias:
     cy.get("#inputEmail1").as("darrehanrasool");
     cy.get("@darrehanrasool").parents("form").find("button").click();
     // (2) via using then():
-    // then() will return instance of the dom it will be JQuery object
     cy.get("#inputEmail1").then((rehan) => {
       cy.wrap(rehan.parents("form").find("button").click());
-      // we can reuse it again
       cy.wrap(rehan.parents("form").find("button").click());
       // we can wrap any objects in order to call cypress methods
       cy.wrap("hello")
@@ -26,7 +25,7 @@ describe("group 1", () => {
           return dar;
         });
       // second way to return values via aliasing.
-      // these variable are globally avalaible.
+      // these variables are globally avalaible.
       cy.get(rehan).as("variable_1");
     });
     cy.get("@variable_1").click();

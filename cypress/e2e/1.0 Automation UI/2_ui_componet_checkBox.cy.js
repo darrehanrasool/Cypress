@@ -2,9 +2,14 @@
 // test hooks in cypress
 beforeEach("open web application", () => {
   cy.visit("/");
-  cy.contains("Forms").click();
-  cy.contains("Form Layout").click();
+  cy.contains("Modal & Overlays").click();
+  cy.contains("Toastr").click();
 });
 describe("ui component Automation", () => {
-  it.only("Check Box buttons", () => {});
+  it("Check Box buttons", () => {
+    cy.get('[type="checkbox"]').check({ force: true });
+    cy.get('[type="checkbox"]').should("be.checked");
+    cy.get('[type="checkbox"]').uncheck({ force: true });
+    cy.get('[type="checkbox"]').should("not.be.checked");
+  });
 });

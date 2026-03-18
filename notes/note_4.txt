@@ -1,4 +1,3 @@
 clear() it will not work for labels.
 check() it will not work for labels.
 click() it willnow work for labels.
-cy.get("#input-password").type("khuftanfaqeer{enter}");

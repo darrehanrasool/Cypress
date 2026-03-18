@@ -1,14 +1,16 @@
 /// <reference types="cypress" />
 // test hooks in cypress
-// cypress did't have hover() method
+// default drop down
 beforeEach("open web application", () => {
   cy.visit("/");
   cy.contains("Modal & Overlays").click();
-  cy.contains("Tooltip").click();
+  cy.contains("Toastr").click();
 });
 describe("ui component Automation", () => {
-  it("Tool Tips", () => {
-    cy.contains("button", "Top").trigger("mouseenter");
-    cy.get("nb-tooltip").should("have.text", "This is a tooltip");
+  it("Native Drop Dowm", () => {
+    cy.contains("div", "Toast type:")
+      .find("select")
+      .select("info")
+      .should("have.value", "info");
   });
 });
