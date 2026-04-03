@@ -1,11 +1,20 @@
 /// <reference types="cypress" />
-// test hooks in cypress
-// then() will return instance of the dom it will be JQuery object
+// test hooks in cypress.
+// then() will return instance of the dom it will be JQuery object.
+// we can wrap any objects in order to call cypress methods.
+// these variables are globally avalaible.
 beforeEach("open web applications", () => {
   cy.visit("/");
   cy.contains("Forms").click();
   cy.contains("Form Layouts").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("group 1", () => {
   it.only("Reusing Locators in Cypress: ", () => {
     // (0) via using variable:
@@ -17,17 +26,14 @@ describe("group 1", () => {
     // (2) via using then():
     cy.get("#inputEmail1").then((rehan) => {
       cy.wrap(rehan.parents("form").find("button").click());
-      cy.wrap(rehan.parents("form").find("button").click());
-      // we can wrap any objects in order to call cypress methods
-      cy.wrap("hello")
-        .should("equal", "hello")
-        .then((dar) => {
-          return dar;
+      cy.wrap("darrehanrasool")
+        .should("equal", "darrehanrasool")
+        .then((value) => {
+          return value;
         });
-      // second way to return values via aliasing.
-      // these variables are globally avalaible.
       cy.get(rehan).as("variable_1");
     });
+
     cy.get("@variable_1").click();
   });
 });

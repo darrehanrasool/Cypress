@@ -1,12 +1,19 @@
 /// <reference types="cypress" />
-//test hooks in cypress
+// test hooks in cypress
+// via using JQuery method() and via using Invoke method()
+// Invoke method() allows us to use  JQuery  methods()
 beforeEach("open web applications ", () => {
   cy.visit("/");
   cy.contains("Forms").click();
   cy.contains("Form Layout").click();
 });
-// via using JQuery method() and via using Invoke method()
-// Invoke method() allows us to use  JQuery  methods()
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("Extracting Values From DOM ", () => {
   it.only("first test 1", () => {
     // eg 1
@@ -22,13 +29,19 @@ describe("Extracting Values From DOM ", () => {
       .then((value) => {
         console.log(value);
       });
-    // eg 3
+    //eg 3
+    cy.get('[for="exampleInputEmail1"]')
+      .invoke("html")
+      .then((value) => {
+        console.log(value);
+      });
+    // eg 4
     cy.get('[id="exampleInputEmail1"]')
       .invoke("attr", "class")
       .then((classvalue) => {
         console.log(classvalue);
       });
-    // eg 4
+    // eg 5
     cy.get('[id="exampleInputEmail1"]').type("darrehanrasool");
     cy.get('[id="exampleInputEmail1"]')
       .invoke("prop", "value")

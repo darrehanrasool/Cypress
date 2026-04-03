@@ -4,6 +4,13 @@ beforeEach("open web application", () => {
   cy.contains("Forms").click();
   cy.contains("Form Layout").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("ui component Automation", () => {
   it.only("radio buttons", () => {
     cy.contains("nb-card", "Using the Grid")

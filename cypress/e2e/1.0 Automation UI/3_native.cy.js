@@ -6,8 +6,15 @@ beforeEach("open web application", () => {
   cy.contains("Modal & Overlays").click();
   cy.contains("Toastr").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("ui component Automation", () => {
-  it("Native Drop Dowm", () => {
+  it.only("Native default Drop Down", () => {
     cy.contains("div", "Toast type:")
       .find("select")
       .select("info")

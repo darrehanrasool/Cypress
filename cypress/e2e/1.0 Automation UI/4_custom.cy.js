@@ -6,6 +6,13 @@ beforeEach("open web application", () => {
   cy.contains("Modal & Overlays").click();
   cy.contains("Toastr").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("ui component Automation", () => {
   it("Custom Drop Dowm", () => {
     cy.contains("div", "Position:").find("nb-select").click();
@@ -15,6 +22,7 @@ describe("ui component Automation", () => {
       .should("have.text", "top-left");
 
     // example of loop ie iteration
+    // open drop down for click again
     cy.contains("div", "Position:")
       .find("nb-select")
       .then((dropdown) => {
@@ -22,7 +30,6 @@ describe("ui component Automation", () => {
         cy.get(".option-list nb-option").each((item, index, list) => {
           cy.wrap(item).click();
           if (index < list.length - 1) {
-            // open drop down for click again
             cy.wrap(dropdown).click();
           }
         });

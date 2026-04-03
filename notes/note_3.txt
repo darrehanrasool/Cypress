@@ -1,5 +1,4 @@
-what are locators ?
-via locators we can target DOM elements eg id="email"
+what are locators ? via locators we can target DOM elements eg id="email".
 cypress locators have 3 methods :
 cy.get("");     : searching element via tag  globally
 cy.contains("") : searching element via text globally

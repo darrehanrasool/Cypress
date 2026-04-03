@@ -1,3 +1,16 @@
 clear() it will not work for labels.
 check() it will not work for labels.
-click() it willnow work for labels.
+click() it will work for labels.
+event   tooltip.trigger("mouseenter")
+
+Assertions:
+equal
+contain
+have.text
+have.attr
+have.prop
+have.value
+not.have.value
+be.checked
+not.be.checked
+be.disabled

@@ -6,6 +6,12 @@ beforeEach("open web application", () => {
   cy.contains("Form Layout").click();
 });
 
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("Assertion Ways and Retry", () => {
   it.only("first test 1", () => {
     // partial assertion eg

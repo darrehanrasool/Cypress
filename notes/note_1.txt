@@ -1,7 +1,7 @@
 Cypress is a Javascript E2E web UI automation.
 Javascript runs directly inside the web browser.
 Cypress    runs directly inside the web browser.
-There are certain limitations of Cypress :
+There are certain limitations of Cypress as well.
 we can't switch between browser windows.
 Limited iframe support.
 Parallel execution in cypress cloud.

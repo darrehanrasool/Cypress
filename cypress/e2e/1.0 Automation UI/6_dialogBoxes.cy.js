@@ -5,6 +5,11 @@ beforeEach("open web application", () => {
   cy.contains("Tables & Data").click();
   cy.contains("Smart Table").click();
 });
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
 describe("ui component Automation", () => {
   it("Dialog Box", () => {
     // option 1

@@ -5,8 +5,15 @@ beforeEach("open web application", () => {
   cy.contains("Modal & Overlays").click();
   cy.contains("Toastr").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("ui component Automation", () => {
-  it("Check Box buttons", () => {
+  it.only("Check Box buttons", () => {
     cy.get('[type="checkbox"]').check({ force: true });
     cy.get('[type="checkbox"]').should("be.checked");
     cy.get('[type="checkbox"]').uncheck({ force: true });

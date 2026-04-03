@@ -5,6 +5,13 @@ beforeEach("open web applications", () => {
   cy.contains("Forms").click();
   cy.contains("Form Layouts").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("test group 1", () => {
   it.only("first test 1", () => {
     //multi  level up  : use .parents()

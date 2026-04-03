@@ -1,10 +1,20 @@
 /// <reference types="cypress" />
+
+const cypress = require("cypress");
+
 // test hooks in cypress
 beforeEach("open web application", () => {
   cy.visit("/");
   cy.contains("Forms").click();
   cy.contains("Form Layout").click();
 });
+
+afterEach("cleanup", () => {
+  console.log("Test Finished");
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
+
 describe("ui component Automation", () => {
   it.only("input feilds", () => {
     // Example 1
@@ -26,6 +36,7 @@ describe("ui component Automation", () => {
       .clear()
       .type("positive assertion passed sucessfully !")
       .press(Cypress.Keyboard.Keys.TAB);
+
     // Example 4
     cy.get("#inputEmail1")
       .should("not.have.value", ``)
