@@ -10,7 +10,7 @@ afterEach("cleanup", () => {
   cy.clearCookies();
   cy.clearLocalStorage();
 });
-// window event listner
+// window event listener
 describe("ui component Automation", () => {
   it("Dialog Box", () => {
     // option 1
