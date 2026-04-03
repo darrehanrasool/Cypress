@@ -16,7 +16,7 @@ afterEach("cleanup", () => {
 
 describe("test group 3", () => {
   it.only("darrehanrasool", () => {
-    cy.contains("Sign in", { matchCase: false }, { timeout: 1000 });
+    cy.contains("Sign in", { matchCase: false, timeout: 1000 });
     cy.contains('[status="warning"]', "Sign in");
     cy.contains("nb-card", "Form without labels");
     cy.contains("nb-card", "Form without labels").find("button");

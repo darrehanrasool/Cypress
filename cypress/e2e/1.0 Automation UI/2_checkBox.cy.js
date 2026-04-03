@@ -13,7 +13,7 @@ afterEach("cleanup", () => {
 });
 
 describe("ui component Automation", () => {
-  it.only("Check Box buttons", () => {
+  it("Check Box buttons", () => {
     cy.get('[type="checkbox"]').check({ force: true });
     cy.get('[type="checkbox"]').should("be.checked");
     cy.get('[type="checkbox"]').uncheck({ force: true });

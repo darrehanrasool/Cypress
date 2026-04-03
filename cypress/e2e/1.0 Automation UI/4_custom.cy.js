@@ -14,7 +14,7 @@ afterEach("cleanup", () => {
 });
 
 describe("ui component Automation", () => {
-  it("Custom Drop Dowm", () => {
+  it("Custom Drop Down", () => {
     cy.contains("div", "Position:").find("nb-select").click();
     cy.get(".option-list").contains("top-left").click();
     cy.contains("div", "Position:")

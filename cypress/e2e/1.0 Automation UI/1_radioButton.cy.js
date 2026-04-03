@@ -12,7 +12,7 @@ afterEach("cleanup", () => {
 });
 
 describe("ui component Automation", () => {
-  it.only("radio buttons", () => {
+  it("radio buttons", () => {
     cy.contains("nb-card", "Using the Grid")
       .find('[type="radio"]')
       .then((allRadioButtons) => {
