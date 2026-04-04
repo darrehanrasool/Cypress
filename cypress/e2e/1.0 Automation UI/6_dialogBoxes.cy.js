@@ -23,7 +23,6 @@ describe("ui component Automation", () => {
       cy.stub(win, "confirm").as("dialogBox").returns(false);
     });
     cy.get(".nb-trash").first().click();
-
     cy.get("@dialogBox").should(
       "be.calledWith",
       "Are you sure you want to delete?",
