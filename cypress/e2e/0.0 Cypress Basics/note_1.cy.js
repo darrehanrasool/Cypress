@@ -14,7 +14,7 @@ afterEach("clean up", () => {
 });
 
 describe("test group 1 ", () => {
-  it("darrehanrasool", () => {
+  it.only("darrehanrasool", () => {
     console.log("hola from kashmere");
   });
   it("darrehanrasool", () => {
