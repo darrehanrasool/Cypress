@@ -10,7 +10,7 @@ afterEach("cleanup", () => {
   cy.clearCookies();
   cy.clearLocalStorage();
 });
-// window event listener
+// window default event listener
 describe("ui component Automation", () => {
   it("Dialog Box", () => {
     // option 1
@@ -23,6 +23,7 @@ describe("ui component Automation", () => {
       cy.stub(win, "confirm").as("dialogBox").returns(false);
     });
     cy.get(".nb-trash").first().click();
+    // assertion
     cy.get("@dialogBox").should(
       "be.calledWith",
       "Are you sure you want to delete?",

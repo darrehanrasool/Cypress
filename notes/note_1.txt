@@ -4,4 +4,6 @@ Cypress    runs directly inside the web browser.
 There are certain limitations of Cypress as well.
 we can't switch between browser windows.
 Limited iframe support.
+npm i cypress-iframe.
+import "cypress-iframe";
 Parallel execution in cypress cloud.

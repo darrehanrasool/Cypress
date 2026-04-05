@@ -14,3 +14,4 @@ not.have.value
 be.checked
 not.be.checked
 be.disabled
+be.calledWith
